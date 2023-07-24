@@ -1,0 +1,30 @@
+//Typography
+@font-face {
+  font-family: "Deglion";
+  src: local("Deglion"),
+      url("../assets/deglion-regular.woff") format('woff');
+      font-weight: 400;
+      font-style: normal;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.desktop-hidden{
+  display: block;
+
+  @media(min-width: 768px){
+    display: none;
+  }
+}
+
+.mobile-hidden{
+  display: none !important;
+
+  @media(min-width: 768px){
+    display: block !important;
+  }
+}
