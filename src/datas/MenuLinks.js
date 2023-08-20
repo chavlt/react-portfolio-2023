@@ -1,14 +1,14 @@
 export const MenuLinks = [
     {
         title: "Accueil", 
-        link: "charlenevilliette.fr"
+        src: "charlenevilliette.fr"
     },
     {
         title: "Projets",
-        link: "charlenevilliette.fr/projets"
+        src: "charlenevilliette.fr/projets"
     },
     {
         title: "Galerie",
-        link: "charlenvilliette.fr/galerie"
+        src: "charlenvilliette.fr/galerie"
     } 
 ]

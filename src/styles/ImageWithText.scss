@@ -1,0 +1,35 @@
+.image-with-text{
+    display: flex;
+    flex-direction : column;
+    align-items: center;
+    justify-content: space-around;
+    margin : 40px 0;
+    
+    @media(min-width: 768px){
+        height: 100vh;
+        flex-direction : row;
+    }
+    
+    &__content{
+        padding: 0 20px;
+
+        @media(min-width: 650px){
+            width: 75%;
+        }
+        
+        @media(min-width: 768px){
+            width: 50%;
+        }
+
+    }
+
+    &__image{
+        width: 100%;
+        max-width: 300px;
+        padding: 0 20px;
+
+        @media(min-width: 900px){
+            max-width: 410px;
+        }
+    }
+}
