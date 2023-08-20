@@ -1,8 +1,8 @@
 import '../styles/Text.scss'
 
-function Text({text}){
+function Text({children}){
     return (
-        <p className="text">{text}</p>
+        <p className="text">{children}</p>
     )
 }
 

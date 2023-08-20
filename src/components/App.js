@@ -1,6 +1,6 @@
 import Header from './Header'
 import Banner from './Banner'
-import ImageWithText from './ImageWithText'
+import ImageWithTextSection from './ImageWithTextSection'
 
 
 // DATAS
@@ -16,7 +16,8 @@ function App() {
     <div className="App">
       <Header />
       <Banner />
-      <ImageWithText title={aboutDatas.title} text={aboutDatas.text} />
+      <ImageWithTextSection title={aboutDatas.title} text={aboutDatas.text} />
+      
     </div>
   );
 }
