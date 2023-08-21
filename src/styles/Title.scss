@@ -1,0 +1,10 @@
+.title{
+    font-family: 'Deglion', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    margin: 0;
+    
+    @media(min-width: 768px){
+        font-size: 60px;
+    }
+}

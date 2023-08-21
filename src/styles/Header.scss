@@ -1,0 +1,64 @@
+.header{
+    display : flex;
+    flex-direction : row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 0;
+    position : fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 10;
+
+    @media(min-width: 768px){
+        padding: 45px 0;
+    }
+
+    &__logo{
+        font-family: 'Syne', sans-serif;
+        font-weight: 800;
+        font-size: 20px;
+        margin-left: 25px;
+
+        @media(min-width: 768px){
+            margin-left: 80px;
+        }
+    }
+
+    &__button-menu{
+        position : relative;
+    }
+
+    &__menu-title{
+        background: white;
+        border: 1px solid black;
+        border-radius: 11px;
+        padding: 10px 2px;
+        font-family: 'Syne', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        margin-right: 25px;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        width: 80px;
+        text-align: center;
+        
+        @media(min-width: 768px){
+            font-size: 16px;
+            margin-right: 80px;
+        }
+    }
+
+    &__menu-bg-color{
+        background: #E3D6F3;
+        border: 1px solid black;
+        border-radius: 11px;
+        width: 80px;
+        height: 100%;
+        position: absolute;
+        top: 2px;
+        left: 8px;
+        z-index: 0;
+    }
+}
