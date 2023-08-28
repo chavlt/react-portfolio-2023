@@ -1,6 +1,7 @@
 import Header from './Header'
 import Banner from './Banner'
 import ImageWithTextSection from './ImageWithTextSection'
+import SliderSection from './SliderSection'
 
 
 // DATAS
@@ -17,7 +18,7 @@ function App() {
       <Header />
       <Banner />
       <ImageWithTextSection title={aboutDatas.title} text={aboutDatas.text} />
-      
+      <SliderSection />
     </div>
   );
 }

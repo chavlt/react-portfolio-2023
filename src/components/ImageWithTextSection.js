@@ -8,7 +8,7 @@ function ImageWithText({title, text}){
     return (
         <div className={"image-with-text container "}>
             <div className="image-with-text__content">
-                <Title title={title}/>
+                <Title>{title}</Title>
                 <Text>{text}</Text>
             </div>
             <img className="image-with-text__image" src={aboutImage} alt="img"></img>

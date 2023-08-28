@@ -1,9 +1,9 @@
 import '../styles/Title.scss'
 
 
-function Title({title}){
+function Title({children}){
     return(
-        <h1 className="title">{title}</h1>
+        <h1 className="title">{children}</h1>
     )
 
 }
