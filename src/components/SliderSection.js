@@ -18,12 +18,12 @@ let link = {
 function SliderSection() {
     return (
         <div className="slider">
-            <div className="container">
-                <div className="slider__header">
-                    <Title>derniers projets</Title>
-                    <Link link={link.link} text={link.text}></Link>
+            <div className="slider__header container">
+                <Title>derniers projets</Title>
+                <Link link={link.link} text={link.text}></Link>
 
-                </div>
+            </div>
+            <div className="slider__content">
                 <Slider data={SliderContent} />
             </div>
         </div>
