@@ -3,6 +3,8 @@ import Banner from './Banner'
 import ImageWithTextSection from './ImageWithTextSection'
 import SliderSection from './SliderSection'
 import GallerySection from './GallerySection'
+import Footer from './Footer'
+
 
 
 // DATAS
@@ -21,6 +23,7 @@ function App() {
       <ImageWithTextSection title={aboutDatas.title} text={aboutDatas.text} />
       <SliderSection />
       <GallerySection />
+      <Footer />
     </div>
   );
 }

@@ -20,17 +20,17 @@ export const GalleryContent = [
     {
         position: 2,
         image: sushis,
-        alt: "test"
+        alt: "Sushis isométrique"
     },
     {
         position: 3,
         image: starbucks,
-        alt: "test"
+        alt: "Starbucks"
     },
     {
         position: 4,
         image: landscape,
-        alt: "test"
+        alt: "Landscape"
     },
     {
         position: 5,
@@ -50,22 +50,22 @@ export const GalleryContent = [
     {
         position: 8,
         image: hot_dog,
-        alt: "test"
+        alt: "Hot Dog"
     },
     {
         position: 9,
         image: gloomy,
-        alt: "test"
+        alt: "Gloomy"
     },
     {
         position: 10,
         image: boule_violette,
-        alt: "test"
+        alt: "Boule violette"
     },
     {
         position: 11,
         image: boule_2,
-        alt: "test"
+        alt: "Boule"
     },
     {
         position: 12,

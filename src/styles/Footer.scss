@@ -1,0 +1,12 @@
+.footer{
+    position: relative;
+
+    &__bg{
+        width: 100%;
+        position: absolute;
+    }
+
+    &__content{
+        position : absolute;
+    }
+}
