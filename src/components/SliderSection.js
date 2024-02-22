@@ -1,12 +1,9 @@
 import '../styles/SliderSection.scss'
-import { register } from 'swiper/element/bundle';
 import Title from './Title'
 import Link from './Link'
 import Slider from './Slider'
 import { SliderContent } from '../datas/SliderContent'
 
-
-register();
 
 let link = {
     "link": "#",
@@ -16,6 +13,7 @@ let link = {
 
 
 function SliderSection() {
+
     return (
         <div className="slider">
             <div className="slider__header container">

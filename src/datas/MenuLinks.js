@@ -1,14 +1,22 @@
+import sticker1 from '../assets/etoile1.svg'
+import sticker2 from '../assets/etoile2.svg'
+import sticker3 from '../assets/etoile3.svg'
+
+
 export const MenuLinks = [
     {
         title: "Accueil", 
-        src: "charlenevilliette.fr"
+        src: "/",
+        sticker: sticker1
     },
     {
         title: "Projets",
-        src: "charlenevilliette.fr/projets"
+        src: '/Projects',
+        sticker: sticker2
     },
     {
         title: "Galerie",
-        src: "charlenvilliette.fr/galerie"
+        src: '/Gallery',
+        sticker: sticker3
     } 
 ]

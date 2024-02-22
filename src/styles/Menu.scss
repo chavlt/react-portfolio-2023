@@ -5,15 +5,14 @@
     background: white;
     border: 1px solid black;
     border-radius: 11px;
-    padding: 20px;
     width: 220px;
     text-align: center;
     opacity: 0;
     pointer-events: none;
     transform: translateX(120%);
     transition: all 300ms ease;
-    width: 90%;
-    height: 90vh;
+    width: fit-content;
+    padding: 0 100px 35px;
     display: flex;
     flex-direction : column;
     align-items: center;
@@ -22,9 +21,13 @@
     @media(min-width: 768px){
         top: 100px;
         right: 60px;
-        width: 220px;
-        display: block;
+        width: 190px;
+        padding: 0 0 35px;
+    }
 
+    a{
+        text-decoration: none;
+        color: black;
     }
 
     &.active{
@@ -73,14 +76,15 @@
         position : relative;
         width: fit-content;
         margin: 0 auto 50px;
+        //transform: translateX(-20%);
         
         @media(max-width: 767px){
-            opacity: 0;
-            transform: translateX(-20%);
+            font-size: 18px;
+            margin : 0 auto 30px;
+            transform: translateX(0);
             transition: all 200ms ease;
             
             &.display{
-                opacity: 1;
                 transform: translateX(0);
             }
         }
@@ -108,18 +112,18 @@
         .sticker{
             position: absolute;
             pointer-events: none;
-            top: -14px;
-            right: -45px;
+            top: -3px;
+            right: -35px;
             opacity: 0;
-            transform: translateX(50px);
+            transform: translateX(50px) rotate(7deg);
             transition: all 150ms ease;
-            width: 50px;
+            width: 20px;
             height: auto;
         }
 
         &:nth-child(2n){
             .sticker{
-                left: -45px;
+                left: -35px;
                 transform: translateX(-50px);
             }
 
@@ -139,10 +143,29 @@
 
             .sticker{
                 opacity: 1;
-                transform: translateX(0);
+                transform: translateX(0) rotate(7deg);
             }
 
             
+        }
+    }
+
+    &__social-medias-links{
+        position : absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction : row;
+        align-content: center;
+    }
+
+    &__social-medias-link{
+        margin: 0 10px;
+
+        img{
+            width: 20px;
+            height: auto;
         }
     }
 }

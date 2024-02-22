@@ -7,8 +7,8 @@ function Gallery({data}){
             <img className="gallery__stickers gallery__stickers--double-stars" src={double_stars} alt="sticker with stars"></img>
             <img className="gallery__stickers gallery__stickers--simple-star" src={simple_star} alt="sticker with star"></img>
             {data.map(({image, position, alt}) => (
-                <div className="gallery__item">
-                    <img className="image" key={position} src={image} alt={alt}></img>
+                <div className="gallery__item" key={position}>
+                    <img className="image" src={image} alt={alt}></img>
                 </div>
             ))}
         </div>

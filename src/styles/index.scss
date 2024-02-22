@@ -15,10 +15,19 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.App{
+  overflow-x: hidden;
+}
+
 .container{
-  max-width: 1085px;
+  max-width: 1285px;
+  width: 90vw;
   margin : 0 auto;
-  padding: 0 20px;
+  overflow-x: hidden;
+  
+  @media(min-width: 768px){
+    padding: 0 40px;
+  }
 }
 
 .desktop-hidden{

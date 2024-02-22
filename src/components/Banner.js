@@ -14,7 +14,7 @@ function Banner(){
                 <span className="banner__name">Charlène Villiette</span>
                 <span className="banner__port">port</span>
                 <span className="banner__folio">folio</span>
-                <span className="banner__year">2023</span>
+                <span className="banner__year">2024</span>
 
                 <img className="banner__sticker sticker-dev" src={ stickerDev } alt="Développeuse front-end"></img>
                 <img className="banner__sticker star-1" src={ star1 } alt="star"></img>

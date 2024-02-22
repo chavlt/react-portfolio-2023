@@ -1,22 +1,50 @@
 .slider{
     background: #E9E5F050;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction : column;
     align-items: center;
     justify-content: center;
+    padding: 20px 0;
+
+    @media(min-width: 768px){
+        padding: 0;
+    }
 
     &__header{
         display: flex;
-        flex-direction : row;
-        align-items: flex-end;
+        flex-direction : column;
+        align-items: flex-start;
         justify-content: flex-start;
-        margin-bottom: 80px;
-        width: 100%;
+        margin-bottom: 20px;
+
+
+        &.container{
+            margin: 100px auto 80px;
+        }
+
+        @media(min-width: 768px){
+            flex-direction : row;
+            align-items: flex-end;
+            margin-bottom: 80px;
+        }
+
+        .link{
+            margin-left: 0;
+
+            @media(min-width: 768px){
+                margin-left: 10px;
+            }
+        }
     }
 
     &__content{
         width: 100%;
-        padding-left: 100px;
+        margin-bottom: 0;
+        position: relative;
+
+        @media(min-width: 768px){
+            margin-bottom: 130px;
+        }
     }
 }

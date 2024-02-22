@@ -1,12 +1,26 @@
-swiper-container{
-    swiper-slide{
+.slider-container{
+    position : relative;
+    overflow-x: hidden;
+    padding-bottom: 100px;
+
+    &:focus-visible{
+        outline: none;
+    }
+
+    .slide{
         width: fit-content;
-        height: fit-content;
-        max-width: 423px;
+        max-width: 400px;
+        width: 80%;
+        margin: 0 10px;
         border-radius: 20px;
         overflow: hidden;
-        margin-right: 40px;
         border: 1px solid black;
+
+        @media(min-width: 768px){
+            width: 100%;
+            max-width: 400px;
+            margin: 0 20px;
+        }
 
         .tag{
             background: #D8C6EE;
@@ -18,91 +32,143 @@ swiper-container{
             width: fit-content;
             
             @media(min-width: 768px){
-                font-size: 16px;
-                padding: 10px 20px;
+                padding: 5px 10px;
             }
         }
 
-        .slide{
-            &__header{
-                width: 423px;
-                height: 250px;
-                position : relative;
-            }
+        &__header{
+            width: 400px;
+            height: 250px;
+            position : relative;
+        }
 
-            &__image{
-                width: 100%;
+        &__image{
+            position : absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+
+        &__tags{
+            position : absolute;
+            z-index: 1;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &__infos{
+            padding: 30px;
+        }
+
+        &__infos-header{
+            display: flex;
+            flex-direction : row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        &__title{
+            font-family: "Deglion", sans-serif;
+            font-size: 25px;
+            font-weight: 400;
+            margin : 0;
+            line-height: 100%;
+            
+            @media(min-width: 768px){
+                font-size: 30px;
+            }
+        }
+
+        &__year{
+            font-family: "Syne", sans-serif;
+            font-size: 16px;
+            letter-spacing: -0.04rem;
+            font-weight: 400;
+        }
+
+        &__description{
+            font-family: "Syne", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 160%;
+        }
+
+        &__button{
+            padding: 15px 24px;
+            background: #E9E5F050;
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            position : absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    &__prev-next-buttons{
+        position : absolute;
+        width: 100%;
+        bottom: 25px;
+        display: flex;
+        flex-direction : row;
+        gap: 15px;
+        justify-content: center;
+
+        @media(min-width: 768px){
+            bottom: -20px;
+        }
+
+        .previous, .next{
+            border: 1px solid black;
+            height: 58px;
+            width: 58px;
+            border-radius: 20px;
+            background: white;
+            display: flex;
+            flex-direction : row;
+            align-items: center;
+            justify-content: center;
+            position : relative;
+            cursor: pointer;
+            user-select: none;
+
+            &::after{
+                content: "";
+                background: #D8C6EE;
+                position : absolute;
+                top: 4px;
+                left: 4px;
+                z-index: -1;
                 height: 100%;
-                position : absolute;
-                top: 0;
-                left: 0;
-                object-fit: cover;
+                width: 100%;
+                border: 1px solid black;
+                border-radius: 19px;
+                user-select: none;
             }
 
-            &__tags{
-                position : absolute;
-                z-index: 1;
-                margin: 20px;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
+            &:active{
+                transform: translate(5px, 5px);
+                background: white;
 
-
-            &__infos{
-                padding: 30px;
-            }
-
-            &__infos-header{
-                display: flex;
-                flex-direction : row;
-                align-items: center;
-                justify-content: space-between;
-                gap: 20px;
-            }
-
-            &__title{
-                font-family: "Deglion", sans-serif;
-                font-size: 40px;
-                font-weight: 400;
-                margin : 0;
-                line-height: 100%;
-                
-                @media(min-width: 768px){
-                    font-size: 50px;
+                &::after{
+                    top: 0;
+                    left: 0;
                 }
-            }
-
-            &__year{
-                font-family: "Syne", sans-serif;
-                font-size: 16px;
-                letter-spacing: -0.04rem;
-                font-weight: 400;
-            }
-
-            &__description{
-                font-family: "Syne", sans-serif;
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 160%;
-            }
-
-            &__button{
-                padding: 15px 24px;
-                background: #E9E5F050;
-                border-top: 1px solid black;
-                border-left: 1px solid black;
-                border-top-left-radius: 20px;
-                border-bottom-right-radius: 20px;
-                position : absolute;
-                bottom: 0;
-                right: 0;
             }
         }
     }
-}
 
+    .flickity-button{
+        cursor: pointer;
+    }
 
-.swiper{
-    overflow: visible !important;
+    .flickity-viewport{
+        padding: 0 3%;
+    }
 }

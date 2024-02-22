@@ -2,33 +2,47 @@
     position: relative;
     height: fit-content;
     width: 100%;
-
-    &__bg{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+    background : #e3d6f334;
 
     &__content{
         position: relative;
         z-index: 2;
         margin : 0 auto;
         text-align: center;
-        padding: 50px;
+        padding: 50px 20px;
+
+        @media(min-width: 768px){
+            padding: 50px;
+        }
+    }
+
+    &__item{
+        margin: 0;
+    }
+
+    &__contact{
+        display: flex;
+        flex-direction : column;
     }
 
     &__title{
-        font-family: "Deglion", serif;
-        font-size: 30px;
+        font-family: "Syne", serif;
+        font-size: 20px;
         color: #6D588E;
         font-weight: 400;
         margin : 0;
     }
 
-    &__link{
+    &__text{
         font-family: "Syne", sans-serif;
         line-height: 100%;
+        margin: 5px 0;
+        color: #715792;
+        opacity: 70%;
+
+        &.small{
+            font-size: 13px;
+        }
     }
 
     &__social-icon{
@@ -38,10 +52,36 @@
     }
 
     &__item:first-child{
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
 
-    &__social-media{
-        margin-top: 10px;
+    &__link{
+        position: relative;
+        margin: 0 5px;
+        text-decoration: none;
+        transition: opacity 300ms ease;
+
+        &:hover{
+            opacity: 1;
+
+            &::before{
+                width: 100%;
+            }
+        }
+
+        &::before{
+            content: '';
+            position : absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #715792;
+            transition: width 300ms ease;
+        }
+    }
+
+    &__mail{
+        margin-bottom: 20px;
     }
 }

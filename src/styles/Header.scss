@@ -26,27 +26,41 @@
     }
 
     &__button-menu{
-        position : relative;
+        position : absolute;
+        right: 25px;
+
+        @media(min-width: 768px){
+            right: 80px;
+        }
     }
 
-    &__menu-title{
-        background: white;
-        border: 1px solid black;
+    &__menu{
         border-radius: 11px;
-        padding: 10px 2px;
+        border: 1px solid black;
         font-family: 'Syne', sans-serif;
         font-weight: 400;
         font-size: 14px;
-        margin-right: 25px;
+        width: fit-content;
+        text-align: center;
+        user-select: none;
+
+        @media(min-width: 768px){
+            font-size: 16px;
+        }
+    }
+
+    &__menu-title{
+        padding: 11px 0;
+        background: white;
         cursor: pointer;
         position: relative;
         z-index: 2;
-        width: 80px;
-        text-align: center;
+        transition: transform 100ms ease;
+        min-width: 92px;
+
         
-        @media(min-width: 768px){
-            font-size: 16px;
-            margin-right: 80px;
+        &:active{
+            transform: translate(5px, 5px);
         }
     }
 
@@ -54,11 +68,12 @@
         background: #E3D6F3;
         border: 1px solid black;
         border-radius: 11px;
-        width: 80px;
-        height: 100%;
+        padding: 10px 0;
         position: absolute;
-        top: 2px;
-        left: 8px;
+        top: 7px;
+        left: 7px;
         z-index: 0;
+        min-width: 90px;
+
     }
 }
