@@ -3,6 +3,7 @@ import '../styles/Slider.scss'
 import Flickity from 'react-flickity-component'
 import previous_arrow from '../assets/arrow-left.svg'
 import next_arrow from '../assets/arrow-right.svg'
+import React from 'react'
 
 
 
@@ -13,9 +14,8 @@ function Slider({data}){
 
     if (window.matchMedia("(min-width: 768px)").matches) {
         flickityOptions = {
-            initialIndex: 0,
             groupCells: 1,
-            cellAlign: 'center',
+            cellAlign: 'left',
             prevNextButtons: false,
             freeScroll: true,
             pageDots: false,
@@ -24,9 +24,8 @@ function Slider({data}){
         }
     }else{
         flickityOptions = {
-            initialIndex: 0,
             groupCells: '75%',
-            cellAlign: 'center',
+            cellAlign: 'left',
             prevNextButtons: false,
             freeScroll: true,
             pageDots: false,
@@ -35,10 +34,22 @@ function Slider({data}){
         }
     }
 
+    const ref = React.useRef(null);
+
+
+    function myCustomPrevious() {
+        ref.current.previous()
+    }
+
+    function myCustomNext(){
+        ref.current.next()
+    }
+
+
     
     return (
         <div className="slider-section">
-            <Flickity className="slider-container" elementType={'div'} options={flickityOptions} disableImagesLoaded={false} reloadOnUpdate static>
+            <Flickity flickityRef={c => ref.current = c} className="slider-container" elementType={'div'} options={flickityOptions} disableImagesLoaded={false} reloadOnUpdate static>
                 {data.map((slide, index) => (
                     <div className="slide" key={index}>
                         <div className="slide__header">
@@ -66,8 +77,8 @@ function Slider({data}){
                 ))}
             </Flickity>
             <div className="slider-container__prev-next-buttons">
-                <div className="previous"><img src={previous_arrow} alt="arrow-left"></img></div>
-                <div className="next"><img src={next_arrow} alt="arrow-right"></img></div>
+                <div className="previous" onClick={myCustomPrevious}><img src={previous_arrow} alt="arrow-left"></img></div>
+                <div className="next" onClick={myCustomNext}><img src={next_arrow} alt="arrow-right"></img></div>
             </div>
         </div>
     )

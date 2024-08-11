@@ -1,6 +1,5 @@
 .slider-container{
     position : relative;
-    overflow-x: hidden;
     padding-bottom: 100px;
 
     &:focus-visible{
@@ -137,6 +136,8 @@
             position : relative;
             cursor: pointer;
             user-select: none;
+            transform: unset;
+            transition: transform 300ms ease;
 
             &::after{
                 content: "";
@@ -167,8 +168,11 @@
     .flickity-button{
         cursor: pointer;
     }
-
-    .flickity-viewport{
-        padding: 0 3%;
-    }
 }
+
+
+// pour avoir la marge dynamique sur le coté gauche
+/* 
+    100vw - (max with de la section /2)
+    et au resize de la window il faudrait refresh le slider
+*/

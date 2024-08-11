@@ -8,7 +8,7 @@ import movenmeet from '../assets/movenmeet.png'
 import secrets_paris from '../assets/secrets-enfouis-sous-paris.png'
 
 
-export const SliderContent = [
+export const ProjectsInfos = [
     {
         tags : "Branding",
         title : "Tikibowl",

@@ -2,13 +2,8 @@ import '../styles/SliderSection.scss'
 import Title from './Title'
 import Link from './Link'
 import Slider from './Slider'
-import { SliderContent } from '../datas/SliderContent'
+import { ProjectsInfos } from '../datas/ProjectsInfos'
 
-
-let link = {
-    "link": "#",
-    "text": "voir tous les projets"
-}
 
 
 
@@ -18,11 +13,11 @@ function SliderSection() {
         <div className="slider">
             <div className="slider__header container">
                 <Title>derniers projets</Title>
-                <Link link={link.link} text={link.text}></Link>
+                <Link link="/projects" text="voir tous les projets"></Link>
 
             </div>
             <div className="slider__content">
-                <Slider data={SliderContent} />
+                <Slider data={ProjectsInfos} />
             </div>
         </div>
     )
