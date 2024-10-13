@@ -1,30 +1,31 @@
 import React from 'react';
-import '../styles/ProjectItem.scss'; // Assurez-vous d'importer le fichier CSS
+import '../styles/ProjectItem.scss';
 import arrow from '../assets/white-arrow.svg'
+import { Link } from 'react-router-dom';
 
 
-const ProjectItem = ({ link, tags, image, year, title }) => {
+const ProjectItem = ({id, tags, image, year, title }) => {
   return (
-    <a className="projects-list__item project" href={link} data-tags={tags} data-title={title}>
-      <div className="project__overlay"></div>
-      <img className="project__image" src={image} alt={title}></img>
-      <p className="project__year">{year}</p>
-      <div className="project__infos">
-        {Array.isArray(tags) ? (
-          <div className="project__tags">
-            {tags.map((tag, index) => (
-              <div className="projects__tag tag" key={index}>{tag}</div>
-            ))}
+    <Link className="projects-list__item project" to={`/projects/${id}`} data-tags={tags} data-title={title}>
+        <div className="project__overlay"></div>
+        <img className="project__image" src={image} alt={title}></img>
+        <p className="project__year">{year}</p>
+        <div className="project__infos">
+          {Array.isArray(tags) ? (
+            <div className="project__tags">
+              {tags.map((tag, index) => (
+                <div className="projects__tag tag" key={index}>{tag}</div>
+              ))}
+            </div>
+          ) : (
+            <div className="project__tags tag">{tags}</div>
+          )}
+          <div className="project__title-container">
+            <h3 className="project__title">{title}</h3>
+            <img className="project__arrow" src={arrow} alt="arrow"></img>
           </div>
-        ) : (
-          <div className="project__tags tag">{tags}</div>
-        )}
-        <div className="project__title-container">
-          <h3 className="project__title">{title}</h3>
-          <img className="project__arrow" src={arrow} alt="arrow"></img>
         </div>
-      </div>
-    </a>
+    </Link>
   );
 };
 

@@ -3,7 +3,10 @@
     aspect-ratio: 4/3;
     padding: 22px;
     text-decoration: none;
-    display: inline-grid;
+    display: flex;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
 
     @media(min-width: 768px){
         padding: 28px;
@@ -52,13 +55,22 @@
         margin-top: 15px !important;
     }
 
-    &__year, &__infos{
+    &__infos{
         position : relative;
         z-index: 1;
     }
 
     &__year{
         font-size: 14px;
+        position: absolute;
+        top: 22px;
+        left: 22px;
+        z-index: 1;
+
+        @media(min-width: 768px){
+            top: 28px;
+            left: 28px;
+        }
     }
 
     &__arrow{

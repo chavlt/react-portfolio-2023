@@ -5,6 +5,7 @@ import React, { useState } from "react";
 
 
 
+
 // FILTERS
 let filters = ["tous", "branding", "ui/ux", "illustration", "app mobile", "landing page"]
 
@@ -44,7 +45,7 @@ function ProjectsList(){
                         .map((project, index) =>(
                             <ProjectItem
                                 key={index}
-                                link={project.link}
+                                id={project.id}
                                 tags={project.tags}
                                 image={project.image}
                                 year={project.year}
