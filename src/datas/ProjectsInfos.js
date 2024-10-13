@@ -18,7 +18,7 @@ export const ProjectsInfos = [
         link : "test"
     },
     {
-        tags : "IU/UX",
+        tags : "ui/ux",
         title : "Refonte ba&sh",
         year : "2020",
         description : "Fusce venenatis bibendum sagittis. Aenean fermentum porttitor fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris ultricies, metus sit amet ornare.",
@@ -26,7 +26,7 @@ export const ProjectsInfos = [
         link : "test"
     },
     {
-        tags : "Branding",
+        tags : "branding",
         title : "Flowa",
         year : "2021",
         description : "Fusce venenatis bibendum sagittis. Aenean fermentum porttitor fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris ultricies, metus sit amet ornare.",
@@ -34,7 +34,7 @@ export const ProjectsInfos = [
         link : "test"
     },
     {
-        tags : "UI/UX",
+        tags : "ui/ux",
         title : "Dynawatch",
         year : "2020",
         description : "Fusce venenatis bibendum sagittis. Aenean fermentum porttitor fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris ultricies, metus sit amet ornare.",
@@ -42,7 +42,7 @@ export const ProjectsInfos = [
         link : "test"
     },
     {
-        tags : "Branding",
+        tags : "branding",
         title : "Création de logo",
         year : "2019",
         description : "Fusce venenatis bibendum sagittis. Aenean fermentum porttitor fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris ultricies, metus sit amet ornare.",
@@ -50,7 +50,7 @@ export const ProjectsInfos = [
         link : "test"
     },
     {
-        tags : ["UI/UX","Branding"],
+        tags : ["ui/ux","branding"],
         title : "Refonte du marché de Noël de Colmar",
         year : "2021",
         description : "Fusce venenatis bibendum sagittis. Aenean fermentum porttitor fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris ultricies, metus sit amet ornare.",
@@ -58,7 +58,7 @@ export const ProjectsInfos = [
         link : "test"
     },
     {
-        tags : ["App mobile","Landing page"],
+        tags : ["app mobile","landing page"],
         title : "MoveN'Meet",
         year : "2018",
         description : "Fusce venenatis bibendum sagittis. Aenean fermentum porttitor fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris ultricies, metus sit amet ornare.",
@@ -66,7 +66,7 @@ export const ProjectsInfos = [
         link : "test"
     },
     {
-        tags : "App mobile",
+        tags : "app mobile",
         title : "Des secrets enfouis sous Paris",
         year : "2018",
         description : "Fusce venenatis bibendum sagittis. Aenean fermentum porttitor fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris ultricies, metus sit amet ornare.",

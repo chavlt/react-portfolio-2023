@@ -4,13 +4,20 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 70px;
+        flex-wrap: wrap;
+        gap: 20px 30px;
         margin: 30px auto;
+        padding: 0 24px;
+
+        @media(min-width: 768px){
+            gap: 20px 70px;
+        }
 
         &__item{
             border-radius: 5px;
             padding: 8px 10px;
             cursor: pointer;
+            text-transform: lowercase;
 
             &.selected{background: #E9E5F0;}
         }
