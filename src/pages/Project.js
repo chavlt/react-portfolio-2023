@@ -1,9 +1,9 @@
-import ProjectDetails from '../components/ProjectDetails'
+import ProjectPage from '../components/ProjectPage'
 
 function Project() {
   return (
     <div className="project">
-      <ProjectDetails />
+      <ProjectPage />
     </div>
   );
 }

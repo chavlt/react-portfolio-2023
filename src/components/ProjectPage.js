@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { ProjectsInfos } from '../datas/ProjectsInfos';
 
-function ProjectDetails() {
+function ProjectPage() {
   // Récupérer le paramètre dynamique dans l'URL
   const { projectId } = useParams();
 
@@ -13,7 +13,7 @@ function ProjectDetails() {
   }
 
   return (
-    <div className="project-details">
+    <div className="project-page">
       <h1>{project.title}</h1>
       <img src={project.image} alt={project.title} />
       <p>{project.description}</p>
@@ -22,4 +22,4 @@ function ProjectDetails() {
   );
 }
 
-export default ProjectDetails;
+export default ProjectPage;
