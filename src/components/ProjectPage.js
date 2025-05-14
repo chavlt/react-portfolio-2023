@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { ProjectsInfos } from '../datas/ProjectsInfos';
+import '../styles/ProjectPage.scss';
 
 function ProjectPage() {
   // Récupérer le paramètre dynamique dans l'URL

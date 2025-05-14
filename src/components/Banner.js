@@ -1,25 +1,27 @@
 import '../styles/Banner.scss'
-import bg from '../assets/bg.png'
-import stickerDev from '../assets/stickerDev.png'
-import star1 from '../assets/star1.png'
-import star2 from '../assets/star2.png'
-import sticker1 from '../assets/sticker1.png'
+import grid from '../assets/banner-grid.svg'
+import blob from '../assets/banner-blob.png'
+import blobMobile from '../assets/banner-blob-mobile.png'
+import noise from '../assets/banner-noise.png'
+import stars from '../assets/icon-stars.svg'
 
 function Banner(){
     return(
         <div className="banner">
-            <img className="banner__img" src={ bg } alt="desktop banner"></img>
+            <img className="banner__img banner__img--blob mobile-hidden" src={ blob } alt="banner"></img>
+            <img className="banner__img banner__img--blob desktop-hidden" src={ blobMobile } alt="banner"></img>
+            <img className="banner__img banner__img--noise" src={ noise } alt="banner"></img>
+            <img className="banner__img banner__img--grid" src={ grid } alt="banner"></img>
 
             <div className="banner__content">
-                <span className="banner__name">Charlène Villiette</span>
-                <span className="banner__port">port</span>
-                <span className="banner__folio">folio</span>
-                <span className="banner__year">2024</span>
+                <div className="banner__tags">
+                    <div className="banner__tag">développeuse front-end</div>
+                    <div className="banner__tag">designer ui/ux</div>
+                </div>
+                <span className="banner__portfolio">portfolio</span>
+                <span className="banner__year">2025</span>
 
-                <img className="banner__sticker sticker-dev" src={ stickerDev } alt="Développeuse front-end"></img>
-                <img className="banner__sticker star-1" src={ star1 } alt="star"></img>
-                <img className="banner__sticker star-2" src={ star2 } alt="star"></img>
-                <img className="banner__sticker sticker-1" src={ sticker1 } alt="star"></img>
+                <img className="banner__sticker" src={ stars } alt="stars"></img>
             </div>
         </div>
     )

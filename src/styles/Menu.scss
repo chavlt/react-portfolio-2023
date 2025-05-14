@@ -1,22 +1,20 @@
 .menu{
     position : absolute;
-    top: 80px;
-    right: 20px;
-    background: white;
-    border: 1px solid black;
+    top: 40px;
+    right: 40px;
+    background: #FDFCFA;
     border-radius: 11px;
-    width: 220px;
+    width: 40px;
+    height: 30px;
     text-align: center;
-    opacity: 0;
     pointer-events: none;
-    transform: translateX(120%);
     transition: all 300ms ease;
-    width: fit-content;
-    padding: 0 100px 35px;
+    padding: 0 10px;
     display: flex;
     flex-direction : column;
     align-items: center;
     justify-content: center;
+    opacity: 0;
 
     @media(min-width: 768px){
         top: 100px;
@@ -31,9 +29,9 @@
     }
 
     &.active{
-        opacity: 1;
         pointer-events: unset;
-        transform: translateX(0);
+        width: fit-content;
+        height: fit-content;
     }
 
     &__close{
@@ -70,84 +68,13 @@
     }
 
     &__link{
-        font-size: 27px;
-        font-weight: 700;
-        transition: color 300ms ease;
-        position : relative;
-        width: fit-content;
-        margin: 0 auto 50px;
-        //transform: translateX(-20%);
-        
-        @media(max-width: 767px){
-            font-size: 18px;
-            margin : 0 auto 30px;
-            transform: translateX(0);
-            transition: all 200ms ease;
-            
-            &.display{
-                transform: translateX(0);
-            }
-        }
-
-        @media(min-width: 768px){
-            font-size: 16px;
-            margin: 0 auto 30px;
-        }
-
-        &:first-child{
-            margin-top: 30px;
-        }
-
-        &::before{
-            content: '';
-            position : absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #715792;
-            transition: width 300ms ease;
-        }
-
-        .sticker{
-            position: absolute;
-            pointer-events: none;
-            top: -3px;
-            right: -35px;
-            opacity: 0;
-            transform: translateX(50px) rotate(7deg);
-            transition: all 150ms ease;
-            width: 20px;
-            height: auto;
-        }
-
-        &:nth-child(2n){
-            .sticker{
-                left: -35px;
-                transform: translateX(-50px);
-            }
-
-            &:hover{
-                .sticker{
-                    transform: translateX(0) rotate(-7deg);
-                }
-            }
-        }
-
-        &:hover{
-            color: #715792;
-
-            &::before{
-                width: 100%;
-            }
-
-            .sticker{
-                opacity: 1;
-                transform: translateX(0) rotate(7deg);
-            }
-
-            
-        }
+        font-size: 16px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #433A3A;
+        font-weight: 400;
+        letter-spacing: -0.04rem;
+        line-height: 120%;
     }
 
     &__social-medias-links{

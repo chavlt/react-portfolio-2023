@@ -3,7 +3,7 @@
     flex-direction : row;
     align-items: center;
     justify-content: space-between;
-    padding: 25px 0;
+    padding: 40px 0 20px;
     position : fixed;
     top: 0;
     left: 0;
@@ -11,10 +11,13 @@
     z-index: 10;
 
     @media(min-width: 768px){
-        padding: 45px 0;
+        padding: 45px 60px;
+        max-width: calc(100% - 120px);
+        width: 100%;
     }
 
     &__logo{
+        opacity: 0;
         font-family: 'Syne', sans-serif;
         font-weight: 800;
         font-size: 20px;
@@ -25,42 +28,75 @@
         }
     }
 
-    &__button-menu{
-        position : absolute;
-        right: 25px;
+    //desktop menu
+    &__menu{
+        display: none;
 
         @media(min-width: 768px){
-            right: 80px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 32px;
+            background: white;
+            border: 1px solid #f3f3f3;
+            padding: 16px 23px;
+            border-radius: 13px;
         }
     }
 
-    &__menu{
-        border-radius: 11px;
-        border: 1px solid black;
+
+    //mobile menu
+    &__menu-btn{
+        background: #ffffff;
+        border: 1px solid #f3f3f3;
+        cursor: pointer;
+        z-index: 2;
+        transition: transform 100ms ease;
+        border-radius: 13px;
         font-family: 'Syne', sans-serif;
         font-weight: 400;
         font-size: 14px;
         width: fit-content;
         text-align: center;
         user-select: none;
-
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 11px 12px;
+        width: fit-content;
+        transition: width 200ms ease;
+        position : absolute;
+        right: 40px;
+        min-width: 73px;
+        
         @media(min-width: 768px){
-            font-size: 16px;
+            display: none;
         }
     }
 
     &__menu-title{
-        padding: 11px 0;
-        background: white;
-        cursor: pointer;
         position: relative;
-        z-index: 2;
-        transition: transform 100ms ease;
-        min-width: 92px;
+        width: 100%;
+        height: 17px;
 
-        
-        &:active{
-            transform: translate(5px, 5px);
+        p{
+            text-transform: uppercase;
+            margin: 0;
+            transform: translateY(-10px);
+            opacity: 0;
+            transition: transform 200ms ease, opacity 100ms ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+    
+            &.visible{
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            &:first-child{margin-left: 5px;}
         }
     }
 

@@ -10,9 +10,11 @@
 }
 
 
-body {
+body, html {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Syne', sans-serif;
+  font-weight: 400;
+  background: #FDFCFA;
 }
 
 .App{
