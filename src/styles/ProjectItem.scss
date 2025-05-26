@@ -1,4 +1,4 @@
-.project{
+.project-item{
     position: relative;
     aspect-ratio: 4/3;
     padding: 22px;
@@ -25,7 +25,7 @@
         height: 100%;
         width: 100%;
         z-index: 1;
-        border-radius: 3px;
+        border-radius: 10px;
     }
 
 
@@ -37,7 +37,7 @@
         height: 100%;
         object-fit: cover;
         z-index: 0;
-        border-radius: 3px;
+        border-radius: 10px;
     }
 
     &__infos{
@@ -74,11 +74,6 @@
     }
 
     &__arrow{
-        //width: 17px;
-        //height: auto;
-        //margin-bottom: 10px;
-
-        transform: rotate(333deg);
         margin-bottom: 8px;
     }
 
@@ -89,7 +84,6 @@
         letter-spacing: -.04rem;
         margin: 0;
         font-weight: 400;
-        //text-transform: lowercase;
 
         @media(min-width: 768px){
             font-size: 40px;

@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { MenuLinks } from '../datas/MenuLinks'
 import '../styles/Header.scss'
 import Menu from './Menu'
-import menuIcon from '../assets/icon-menu.svg'
 
 function Header(){
     const [isOpenMenu, setIsOpenMenu] = useState(false)
@@ -21,7 +20,12 @@ function Header(){
             </div>
 
             <div className={`header__menu-btn ${isOpenMenu ? 'opened' : ''}`} onClick={() => {setIsOpenMenu(!isOpenMenu); setTextToggle(!textToggle)}}>
-                <img src={ menuIcon } alt="menu icon"></img>
+                <svg className={`header__menu-icon-btn ${isOpenMenu ? 'active' : ''}`} width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.35355H12" stroke="#433A3A" stroke-linecap="round"/>
+                    <path d="M1 5.35355H12" stroke="#433A3A" stroke-linecap="round"/>
+                    <path d="M1 9.35355H12" stroke="#433A3A" stroke-linecap="round"/>
+                </svg>
+
                 <div onClick={() => setIsOpenMenu(true)}  className="header__menu-title">
                     <p className={textToggle ? "visible" : ""}>Menu</p>
                     <p className={!textToggle ? "visible" : ""}>Fermer</p>

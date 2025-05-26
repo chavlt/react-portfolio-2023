@@ -18,14 +18,14 @@ function ProjectsList(){
         setSelectedFilter(filter);
     };
 
-    const getNombreProjetsPourFiltre = (filter) => {
+    const getProjectsNumberForFilter = (filter) => {
         if (filter === 'tous') {
             return ProjectsInfos.length; // Le filtre "tous" montre tous les projets
         }
         return ProjectsInfos.filter((project) => project.tags.includes(filter)).length;
     };
 
-    const filtresVisibles = filters.filter((filter) => getNombreProjetsPourFiltre(filter) > 0);
+    const filtresVisibles = filters.filter((filter) => getProjectsNumberForFilter(filter) > 0);
 
 
 

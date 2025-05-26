@@ -1,7 +1,7 @@
 import '../styles/ImageWithTextSection.scss'
 import Title from './Title'
 import Text from './Text'
-import aboutImage from '../assets/about-2.png'
+import aboutImage from '../assets/about.png'
 
 
 function ImageWithText({title, text}){

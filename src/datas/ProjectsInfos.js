@@ -14,7 +14,7 @@ export const ProjectsInfos = [
         tags : "Branding",
         title : "Tikibowl",
         year : "2022",
-        description : "Fusce venenatis bibendum sagittis. Aenean fermentum porttitor fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris ultricies, metus sit amet ornare.",
+        description : "Tikibowl émerge de la vision audacieuse de deux sœurs martiniquaises, Mya et Amalya, désireuses de marier l'authenticité de leur île natale avec une approche novatrice de la restauration. En réponse à une demande croissante de cuisine respectueuse de l'environnement et des ressources locales, Tikibowl se positionne comme un sanctuaire culinaire offrant des pokés bowls exquis, composés exclusivement d'ingrédients provenant de producteurs locaux.",
         image : tikibowl
     },
     {

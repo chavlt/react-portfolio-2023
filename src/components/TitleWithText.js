@@ -1,6 +1,4 @@
 import '../styles/TitleWithText.scss'
-import sticker1 from '../assets/sticker6.png'
-import sticker2 from '../assets/sticker5-violet.png'
 
 
 function TitleWithText(){
@@ -16,8 +14,6 @@ function TitleWithText(){
                 id lorem. In sem metus, venenatis vel aliquet eget, 
                 egestas sed est.
             </p>
-            <img className="title-with-text__image sticker1" src={sticker1} alt="stars"></img>
-            <img className="title-with-text__image sticker2" src={sticker2} alt="star"></img>
         </div>
     )
 }
