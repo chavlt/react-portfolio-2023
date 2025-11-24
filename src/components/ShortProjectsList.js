@@ -2,11 +2,25 @@ import '../styles/ShortProjectsList.scss'
 import Title from './Title'
 import Link from './Link'
 import ProjectItem from '../components/ProjectItem'
-import { ProjectsInfos } from '../datas/ProjectsInfos'
+import { useEffect, useState } from "react"
 
 
 
 function ShortProjectsList(){
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        async function fetchProjects(){
+            const url = "https://portfolio-backend--development.gadget.app/notion/pages?database_id=1ff5569098a980608935e3789d04f381"
+            const res = await fetch(url);
+            const data = await res.json();
+
+            setProjects(data.results);
+        }
+
+        fetchProjects();
+    }, [])
+    
     return(
         <div className="short-projects-list container">
             <div className="short-projects-list__header">
@@ -16,13 +30,13 @@ function ShortProjectsList(){
 
 
             <div className="short-projects-list__list">
-                {ProjectsInfos.slice(0, 5).map((project, index) =>(
+                {projects && projects.length > 0 && projects.slice(0, 5).map((project, index) => (
                     <ProjectItem
                         key={index}
-                        id={project.id}
-                        tags={project.tags}
-                        image={project.image}
-                        year={project.year}
+                        id={project.properties.handle.rich_text[0].text.content}
+                        tags={project.properties.tags.multi_select[0].name}
+                        image={project.properties.cover.files[0].file.url}
+                        year={project.properties.year.number}
                         title={project.title}
                     />
                 ))}

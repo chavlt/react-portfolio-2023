@@ -52,6 +52,11 @@
             aspect-ratio: unset;
         }
 
+        .project__title{
+            margin: 0;
+            transform: translateY(8px);
+        }
+
         .project__arrow{
             transform: rotate(0);
             margin-bottom: 8px;
