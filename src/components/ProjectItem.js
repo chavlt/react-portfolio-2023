@@ -8,7 +8,7 @@ const ProjectItem = ({id, tags, image, year, title }) => {
     <Link className="projects-list__item project-item" to={`/projects/${id}`} data-tags={tags} data-title={title}>
         <div className="project-item__overlay"></div>
         <img className="project-item__image" src={image} alt={title}></img>
-        <p className="project-item__year">{year}</p>
+        <p className="project-item__year">{new Date(year).getFullYear()}</p>
         <div className="project-item__infos">
           {Array.isArray(tags) ? (
             <div className="project-item__tags">

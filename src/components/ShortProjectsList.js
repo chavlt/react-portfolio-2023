@@ -3,26 +3,25 @@ import Title from './Title'
 import Link from './Link'
 import ProjectItem from '../components/ProjectItem'
 import { useEffect, useState } from "react"
+import { fetchProjects } from "../api/hygraph";
+
+
 
 
 
 function ShortProjectsList(){
+
+
     const [projects, setProjects] = useState([]);
 
-    useEffect(() => {
-        async function fetchProjects(){
-            const url = "https://portfolio-backend--development.gadget.app/notion/pages?database_id=1ff5569098a980608935e3789d04f381"
-            const res = await fetch(url);
-            const data = await res.json();
+  useEffect(() => {
+    fetchProjects().then(setProjects);
+  }, []);
 
-            setProjects(data.results);
-        }
-
-        fetchProjects();
-    }, [])
     
     return(
         <div className="short-projects-list container">
+
             <div className="short-projects-list__header">
                 <Title>Derniers projets</Title>
                 <Link link="/projects" text="Voir tous les projets"></Link>
@@ -30,14 +29,14 @@ function ShortProjectsList(){
 
 
             <div className="short-projects-list__list">
-                {projects && projects.length > 0 && projects.slice(0, 5).map((project, index) => (
-                    <ProjectItem
-                        key={index}
-                        id={project.properties.handle.rich_text[0].text.content}
-                        tags={project.properties.tags.multi_select[0].name}
-                        image={project.properties.cover.files[0].file.url}
-                        year={project.properties.year.number}
-                        title={project.title}
+                {projects && projects.length > 0 && projects.slice(0, 5).map((p, id) => (
+                    <ProjectItem 
+                        key={p.id}
+                        id={p.slug}
+                        tags={p.tags}
+                        image=""
+                        year={p.date}
+                        title={p.title}
                     />
                 ))}
 
