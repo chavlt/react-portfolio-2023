@@ -1,8 +1,7 @@
 import '../styles/ProjectsList.scss'
-import { ProjectsInfos } from '../datas/ProjectsInfos'
 import ProjectItem from '../components/ProjectItem'
 import React, { useEffect,useState } from "react";
-
+import { fetchProjects } from "../api/hygraph";
 
 
 
@@ -15,32 +14,28 @@ function ProjectsList(){
     const [projects, setProjects] = useState([]);
     const [filters, setFilters] = useState(["tous"]);
 
-    useEffect(() => {
-        async function fetchProjects(){
-            const url = "https://portfolio-backend--development.gadget.app/notion/pages?database_id=1ff5569098a980608935e3789d04f381"
-            const res = await fetch(url);
-            const data = await res.json();
 
-            setProjects(data.results);
+useEffect(() => {
+    fetchProjects().then(projects => {
+        // Mettre à jour les projets
+        setProjects(projects);
 
+        // Générer les filtres uniques à partir des projets récupérés
+        const tagSet = new Set();
+        projects.forEach(project => {
+            //[EDIT] Avant : const tags = project.tags?.multi_select || [];
+            const tags = project.tags ? project.tags.split(";").map(tag => tag.trim()) : []; // maintenant project.tags est une chaîne
+            tags.forEach(tag => tagSet.add(tag));
+        });
 
-            // Get all existing filters
-            const tagSet = new Set();
-
-            data.results.forEach(project => {
-                const tags = project.properties.tags?.multi_select || [];
-                tags.forEach(tag => tagSet.add(tag.name));
-            });
-
-            const uniqueTags = Array.from(tagSet);
-            setFilters(["tous", ...uniqueTags]);
-        }
-
-        fetchProjects();
-    }, [])
+        const uniqueTags = Array.from(tagSet);
+        setFilters(["tous", ...uniqueTags]);
+    });
+}, []);
 
 
-    
+
+
     // Fonction pour gérer le clic sur un filtre
     const [selectedFilter, setSelectedFilter] = useState('tous');
 
@@ -48,12 +43,18 @@ function ProjectsList(){
         setSelectedFilter(filter);
     };
 
+
     const getProjectsNumberForFilter = (filter) => {
-        if (filter === 'tous') {
-            return ProjectsInfos.length; // Le filtre "tous" montre tous les projets
-        }
-        return ProjectsInfos.filter((project) => project.tags.includes(filter)).length;
-    };
+    if (filter === 'tous') {
+        return projects.length; // [EDIT] Avant : ProjectsInfos.length
+    }
+    return projects.filter((project) => {
+        //[EDIT] Avant : project.tags.includes(filter)
+        const tags = project.tags ? project.tags.split(",").map(tag => tag.trim()) : [];
+        return tags.includes(filter);
+    }).length;
+};
+
 
     const filtresVisibles = filters.filter((filter) => getProjectsNumberForFilter(filter) > 0);
 
@@ -73,20 +74,22 @@ function ProjectsList(){
                 {projects && projects.length > 0 && 
                     projects
                         .filter(project => {
-                        const tagList = project.properties.tags?.multi_select?.map(tag => tag.name) || [];
-                        return selectedFilter === 'tous' || tagList.includes(selectedFilter);
+                            //[EDIT] Avant : const tagList = project.tags?.multi_select?.map(tag => tag.name) || [];
+                            const tagList = project.tags ? project.tags.split(",").map(tag => tag.trim()) : [];
+                            return selectedFilter === 'tous' || tagList.includes(selectedFilter);
                         })
-                        .map((project, index) => (
+                        .map((p, id) => (
                         <ProjectItem
-                            key={index}
-                            id={project.properties.handle.rich_text[0].text.content}
-                            tags={project.properties.tags.multi_select[0].name}
-                            image={project.properties.cover.files[0].file.url}
-                            year={project.properties.year.number}
-                            title={project.title}
+                            key={p.id}
+                            id={p.slug}
+                            tags={p.tags} // [EDIT] Ici tu peux laisser la chaîne ou convertir en tableau si ProjectItem attend un tableau
+                            image=""
+                            year={p.date}
+                            title={p.title}
                         />
                     ))}
             </div>
+
         </div>
     )
 

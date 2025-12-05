@@ -11,12 +11,11 @@ import { fetchProjects } from "../api/hygraph";
 
 function ShortProjectsList(){
 
-
     const [projects, setProjects] = useState([]);
 
-  useEffect(() => {
-    fetchProjects().then(setProjects);
-  }, []);
+    useEffect(() => {
+        fetchProjects().then(setProjects);
+    }, []);
 
     
     return(
