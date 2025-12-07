@@ -4,20 +4,29 @@ import { Link } from 'react-router-dom';
 
 
 const ProjectItem = ({id, tags, image, year, title }) => {
+  const tagsArray = typeof tags === "string"
+  ? tags.split(";").map(t => t.trim()).filter(Boolean)
+  : tags;
+
+
   return (
     <Link className="projects-list__item project-item" to={`/projects/${id}`} data-tags={tags} data-title={title}>
         <div className="project-item__overlay"></div>
-        <img className="project-item__image" src={image} alt={title}></img>
+        {image ? (
+          <img className="project-item__image" src={image} alt={title}></img>
+        ) : (
+          <div className="project-item__image--empty"></div>
+        )}
         <p className="project-item__year">{new Date(year).getFullYear()}</p>
         <div className="project-item__infos">
-          {Array.isArray(tags) ? (
+          {Array.isArray(tagsArray) ? (
             <div className="project-item__tags">
-              {tags.map((tag, index) => (
+              {tagsArray.map((tag, index) => (
                 <div className="project-item__tag tag" key={index}>{tag}</div>
               ))}
             </div>
           ) : (
-            <div className="project-item__tags tag">{tags}</div>
+            <div className="project-item__tags tag">{tagsArray}</div>
           )}
           <div className="project-item__title-container">
             <h3 className="project-item__title">{title}</h3>

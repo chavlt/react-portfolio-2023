@@ -1,46 +1,19 @@
 .title-with-text{
     margin: 170px auto 50px;
-    max-width: 90vw;
     display: flex;
     flex-direction: column;
     gap: 30px;
     position: relative;
+    padding: 0 20px;
     
-    @media(min-width: 900px){
+    @media(min-width: 768px){
+        max-width: 90vw;
         flex-direction: row;
         align-items: center;
         gap: 60px;
         max-width: 820px;
-
     }
 
-    &__image{
-        position: absolute;
-
-        &.sticker1{
-            width: 85px;
-            height: auto;
-            top: 90px;
-            right: -18px;
-            
-            @media(min-width: 900px){
-                top: -70px;
-                right: -50px;
-            }
-        }
-
-        &.sticker2{
-            width: 53px;
-            height: auto;
-            top: 146px;
-            right: -16px;
-            
-            @media(min-width: 900px){
-                top: -17px;
-                right: -60px;
-            }
-        }
-    }
 
     &__title{
         font-family: 'Deglion', serif;

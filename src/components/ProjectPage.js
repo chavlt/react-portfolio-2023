@@ -1,49 +1,50 @@
+import { fetchProjectById } from '../api/hygraph';
 import '../styles/ProjectPage.scss';
 import { useEffect, useState } from "react";
 
 function ProjectPage({ projectId }) {
-  const [project, setProject] = useState(null);
-  const [loading, setLoading] = useState(true);
+  //const [loading, setLoading] = useState(true);
+  const [project, setProject] = useState([]);
 
+  
   useEffect(() => {
-    async function fetchProject() {
-      try {
-        // 👉 On appelle la nouvelle route Gadget par handle
-        const url = `https://portfolio-backend--development.gadget.app/notion/page/handle/${projectId}`;
-        const res = await fetch(url);
-        const data = await res.json();
+    // Get the page slug
+    const currentUrl = window.location.href;
+    const projectSlug = currentUrl.split('projects/')[1];
 
-        setProject(data);
-      } catch (err) {
-        console.error("Erreur lors du fetch du projet :", err);
-      } finally {
-        setLoading(false);
-      }
-    }
+    fetchProjectById(projectSlug).then(setProject);
+  }, []);
 
-    fetchProject();
-  }, [projectId]);
-
-  if (loading) return <p>Chargement...</p>;
+  //if (loading) return <p>Chargement...</p>;
   if (!project) return <p>Projet non trouvé.</p>;
 
   return (
     <div className="project-page">
       <div className="project-page__banner">
-        <h1>{project.properties?.Name?.title?.[0]?.plain_text || "Sans titre"}</h1>
+        <div className="project-page__banner-text-container">
+          <h1>{project.title || "Sans titre"}</h1>
+          {project.subtitle && <h2>{project.subtitle}</h2>}
+        </div>
+        
         <div className="project-page__overlay"></div>
-        {project.properties?.cover?.files?.[0]?.file?.url && (
+        {project.bannerImage?.url? (
           <img
-            src={project.properties.cover.files[0].file.url}
-            alt={project.properties?.Name?.title?.[0]?.plain_text || "cover"}
+            src={project.bannerImage?.url}
+            alt={project.title || "cover"}
           />
+        ):(
+          <div className="project-page__banner--empty"></div>
         )}
       </div>
 
       <div className="project-page__text container">
-        <div className="project-page__highlight-text">
-          <p>{project.content?.plain_text}</p>
-        </div>
+        {/* Affichage du contenu du projet */}
+        {project.content?.html && (
+          <div
+            className="project-content"
+            dangerouslySetInnerHTML={{ __html: project.content.html }}
+          />
+        )}
       </div>
     </div>
   );

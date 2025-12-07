@@ -28,12 +28,12 @@ function ShortProjectsList(){
 
 
             <div className="short-projects-list__list">
-                {projects && projects.length > 0 && projects.slice(0, 5).map((p, id) => (
+                {projects && projects.length > 0 && [...projects].reverse().slice(0, 5).map((p, id) => (
                     <ProjectItem 
                         key={p.id}
                         id={p.slug}
                         tags={p.tags}
-                        image=""
+                        image={p.coverImage?.url}
                         year={p.date}
                         title={p.title}
                     />

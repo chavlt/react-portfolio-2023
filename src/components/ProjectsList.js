@@ -15,23 +15,22 @@ function ProjectsList(){
     const [filters, setFilters] = useState(["tous"]);
 
 
-useEffect(() => {
-    fetchProjects().then(projects => {
-        // Mettre à jour les projets
-        setProjects(projects);
+    useEffect(() => {
+        fetchProjects().then(projects => {
+            // Update projects
+            setProjects(projects);
 
-        // Générer les filtres uniques à partir des projets récupérés
-        const tagSet = new Set();
-        projects.forEach(project => {
-            //[EDIT] Avant : const tags = project.tags?.multi_select || [];
-            const tags = project.tags ? project.tags.split(";").map(tag => tag.trim()) : []; // maintenant project.tags est une chaîne
-            tags.forEach(tag => tagSet.add(tag));
+            // Create filters depending on the existing projects.
+            const tagSet = new Set();
+            projects.forEach(project => {
+                const tags = project.tags ? project.tags.split(";").map(tag => tag.trim().toLowerCase()) : [];
+                tags.forEach(tag => tagSet.add(tag));
+            });
+
+            const uniqueTags = Array.from(tagSet);
+            setFilters(["tous", ...uniqueTags]);
         });
-
-        const uniqueTags = Array.from(tagSet);
-        setFilters(["tous", ...uniqueTags]);
-    });
-}, []);
+    }, []);
 
 
 
@@ -44,26 +43,11 @@ useEffect(() => {
     };
 
 
-    const getProjectsNumberForFilter = (filter) => {
-    if (filter === 'tous') {
-        return projects.length; // [EDIT] Avant : ProjectsInfos.length
-    }
-    return projects.filter((project) => {
-        //[EDIT] Avant : project.tags.includes(filter)
-        const tags = project.tags ? project.tags.split(",").map(tag => tag.trim()) : [];
-        return tags.includes(filter);
-    }).length;
-};
-
-
-    const filtresVisibles = filters.filter((filter) => getProjectsNumberForFilter(filter) > 0);
-
-
 
     return (
         <div className="projects-list">
             <div className="projects-list__filters filters">
-                { filtresVisibles.map((filter, index) => (
+                { filters.map((filter, index) => (
                     <div className={`filters__item ${filter === selectedFilter ? "selected" : ""}`} onClick={() => handleFilterClick(filter)} key={index} data-tag={filter}>
                         <p className="filters__text">{filter}</p>
                     </div>
@@ -72,18 +56,18 @@ useEffect(() => {
 
             <div className="projects-list__items projects-list">
                 {projects && projects.length > 0 && 
-                    projects
+                    [...projects]
+                        .reverse()
                         .filter(project => {
-                            //[EDIT] Avant : const tagList = project.tags?.multi_select?.map(tag => tag.name) || [];
-                            const tagList = project.tags ? project.tags.split(",").map(tag => tag.trim()) : [];
+                            const tagList = project.tags ? project.tags.split(";").map(tag => tag.trim().toLowerCase()) : [];
                             return selectedFilter === 'tous' || tagList.includes(selectedFilter);
                         })
                         .map((p, id) => (
                         <ProjectItem
                             key={p.id}
                             id={p.slug}
-                            tags={p.tags} // [EDIT] Ici tu peux laisser la chaîne ou convertir en tableau si ProjectItem attend un tableau
-                            image=""
+                            tags={p.tags}
+                            image={p.coverImage?.url}
                             year={p.date}
                             title={p.title}
                         />
