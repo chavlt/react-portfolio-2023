@@ -55,23 +55,26 @@ function ProjectsList(){
             </div>
 
             <div className="projects-list__items projects-list">
-                {projects && projects.length > 0 && 
+                {projects && projects.length > 0 &&
                     [...projects]
-                        .reverse()
+                        .sort((a, b) => new Date(b.date) - new Date(a.date))
                         .filter(project => {
-                            const tagList = project.tags ? project.tags.split(";").map(tag => tag.trim().toLowerCase()) : [];
+                            const tagList = project.tags
+                                ? project.tags.split(";").map(tag => tag.trim().toLowerCase())
+                                : [];
                             return selectedFilter === 'tous' || tagList.includes(selectedFilter);
                         })
-                        .map((p, id) => (
-                        <ProjectItem
-                            key={p.id}
-                            id={p.slug}
-                            tags={p.tags}
-                            image={p.coverImage?.url}
-                            year={p.date}
-                            title={p.title}
-                        />
-                    ))}
+                        .map((p) => (
+                            <ProjectItem
+                                key={p.id}
+                                id={p.slug}
+                                tags={p.tags}
+                                image={p.coverImage?.url}
+                                year={p.date}
+                                title={p.title}
+                            />
+                        ))
+                }
             </div>
 
         </div>

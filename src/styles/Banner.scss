@@ -80,6 +80,7 @@
         font-weight: 500;
         font-size: 14px;
         letter-spacing: -0.04rem;
+        color: currentColor;
 
         &::before{
             content: '';
@@ -102,6 +103,7 @@
         font-family: 'Deglion', sans-serif;
         font-size: 70px;
         line-height: 80%;
+        color: currentColor;
 
         @media(min-width: 768px){
             font-size: 140px;
@@ -114,6 +116,7 @@
         font-weight: 500;
         line-height: 100%;
         margin: 0 -40px 0 auto;
+        color: currentColor;
 
         @media(min-width: 768px){
             font-size: 36px;

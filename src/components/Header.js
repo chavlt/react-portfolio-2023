@@ -20,10 +20,10 @@ function Header(){
             </div>
 
             <div className={`header__menu-btn ${isOpenMenu ? 'opened' : ''}`} onClick={() => {setIsOpenMenu(!isOpenMenu); setTextToggle(!textToggle)}}>
-                <svg className={`header__menu-icon-btn ${isOpenMenu ? 'active' : ''}`} width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1.35355H12" stroke="#433A3A" stroke-linecap="round"/>
-                    <path d="M1 5.35355H12" stroke="#433A3A" stroke-linecap="round"/>
-                    <path d="M1 9.35355H12" stroke="#433A3A" stroke-linecap="round"/>
+                <svg className={`header__menu-icon-btn ${isOpenMenu ? 'opened' : ''}`} width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path className="line line1" d="M1 1.35355H12" stroke="#433A3A" strokeLinecap="round"/>
+                    <path className="line line2" d="M1 5.35355H12" stroke="#433A3A" strokeLinecap="round"/>
+                    <path className="line line3" d="M1 9.35355H12" stroke="#433A3A" strokeLinecap="round"/>
                 </svg>
 
                 <div onClick={() => setIsOpenMenu(true)}  className="header__menu-title">

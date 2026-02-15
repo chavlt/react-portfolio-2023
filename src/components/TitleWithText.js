@@ -6,13 +6,8 @@ function TitleWithText(){
         <div className="title-with-text">
             <h1 className="title-with-text__title">Projets</h1>
             <p className="title-with-text__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Aenean eget porttitor quam. Nullam risus magna, 
-                malesuada et consequat ac, pharetra quis dui. 
-                Nunc augue ante, egestas ut nunc a, rutrum ultrices 
-                quam. Sed eget quam eu neque hendrerit sodales molestie 
-                id lorem. In sem metus, venenatis vel aliquet eget, 
-                egestas sed est.
+                Vous trouverez ici une sélection de projets professionnels, personnels et scolaires, autour du branding, du design UI/UX et du développement front-end.
+                Ils illustrent mon approche globale : comprendre une problématique, concevoir une identité ou une interface cohérente, puis la traduire en une expérience claire et agréable à utiliser.
             </p>
         </div>
     )

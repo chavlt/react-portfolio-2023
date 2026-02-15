@@ -13,7 +13,7 @@
         margin: 0 10px;
         border-radius: 20px;
         overflow: hidden;
-        border: 1px solid black;
+        border: 1px solid #433A3A;
 
         @media(min-width: 768px){
             width: 100%;
@@ -23,7 +23,7 @@
 
         .tag{
             background: #D8C6EE;
-            border: 1px solid black;
+            border: 1px solid #433A3A;
             border-radius: 50px;
             padding: 8px 12px;
             font-family: "Syne", sans-serif;
@@ -100,8 +100,8 @@
         &__button{
             padding: 15px 24px;
             background: #E9E5F050;
-            border-top: 1px solid black;
-            border-left: 1px solid black;
+            border-top: 1px solid #433A3A;
+            border-left: 1px solid #433A3A;
             border-top-left-radius: 20px;
             border-bottom-right-radius: 20px;
             position : absolute;
@@ -124,7 +124,7 @@
         }
 
         .previous, .next{
-            border: 1px solid black;
+            border: 1px solid #433A3A;
             height: 58px;
             width: 58px;
             border-radius: 20px;
@@ -148,7 +148,7 @@
                 z-index: -1;
                 height: 100%;
                 width: 100%;
-                border: 1px solid black;
+                border: 1px solid #433A3A;
                 border-radius: 19px;
                 user-select: none;
             }

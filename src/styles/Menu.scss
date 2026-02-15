@@ -26,7 +26,6 @@
 
     a{
         text-decoration: none;
-        color: black;
     }
 
     &.active{
@@ -35,7 +34,6 @@
         @media(min-width: 768px) {
             display: none;
         }
-        
     }
 
     &__close{
@@ -55,7 +53,7 @@
             right: 0;
             height: 15px;
             width: 2px;
-            background: black;
+            background: #433A3A;
             transform: rotate(45deg);
         }
         
@@ -66,7 +64,7 @@
             right: -6px;
             height: 2px;
             width: 15px;
-            background: black;
+            background: #433A3A;
             transform: rotate(45deg);
         }
     }
@@ -75,7 +73,6 @@
         font-size: 14px;
         text-transform: uppercase;
         text-decoration: none;
-        color: #433A3A;
         font-weight: 400;
         letter-spacing: -0.04rem;
         line-height: 120%;

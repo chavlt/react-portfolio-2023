@@ -1,9 +1,8 @@
 .short-projects-list{
-    margin-top: 100px;
-    margin-bottom: 50px;
-
+    margin: 50px auto;
+    
     @media(min-width: 768px){
-        margin-bottom: 100px;
+        margin: 100px auto;
     }
 
     &__header{
@@ -55,6 +54,7 @@
         .project__title{
             margin: 0;
             transform: translateY(8px);
+            color: currentColor;
         }
 
         .project__arrow{

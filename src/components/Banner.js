@@ -6,6 +6,8 @@ import noise from '../assets/banner-noise.png'
 import stars from '../assets/icon-stars.svg'
 
 function Banner(){
+    let currentYear = new Date().getFullYear();
+
     return(
         <div className="banner">
             <img className="banner__img banner__img--blob mobile-hidden" src={ blob } alt="banner"></img>
@@ -19,7 +21,7 @@ function Banner(){
                     <div className="banner__tag">designer ui/ux</div>
                 </div>
                 <span className="banner__portfolio">portfolio</span>
-                <span className="banner__year">2025</span>
+                <span className="banner__year">{ currentYear }</span>
 
                 <img className="banner__sticker" src={ stars } alt="stars"></img>
             </div>

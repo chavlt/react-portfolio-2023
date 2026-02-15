@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from '../pages/Home'
 import Projects from '../pages/Projects'
 import Gallery from '../pages/Gallery'
-import Project from '../pages/Project';
+import Project from '../pages/Project'
 
 
 

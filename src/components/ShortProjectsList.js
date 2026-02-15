@@ -28,16 +28,22 @@ function ShortProjectsList(){
 
 
             <div className="short-projects-list__list">
-                {projects && projects.length > 0 && [...projects].reverse().slice(0, 5).map((p, id) => (
-                    <ProjectItem 
-                        key={p.id}
-                        id={p.slug}
-                        tags={p.tags}
-                        image={p.coverImage?.url}
-                        year={p.date}
-                        title={p.title}
-                    />
-                ))}
+                {projects && projects.length > 0 &&
+                    [...projects]
+                        .sort((a, b) => new Date(b.date) - new Date(a.date))
+                        .slice(0, 5)
+                        .map((p) => (
+                            <ProjectItem 
+                                key={p.id}
+                                id={p.slug}
+                                tags={p.tags}
+                                image={p.coverImage?.url}
+                                year={p.date}
+                                title={p.title}
+                            />
+                        ))
+                }
+
 
                 <a href="/projects" className="short-projects-list__show-more">
                     <p className="project__title">+ de projets</p>

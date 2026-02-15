@@ -12,7 +12,7 @@
 
     @media(min-width: 768px){
         padding: 45px 60px;
-        max-width: calc(100% - 120px);
+        max-width: calc(100% - 100px);
         width: 100%;
     }
 
@@ -76,9 +76,21 @@
         }
     }
 
-    &__menu-icon{
-        
+    &__menu-icon-btn .line {
+        transition: 
+        transform 0.3s ease,
+        opacity 0.2s ease;
+        transform-origin: center;
     }
+
+    &__menu-btn.opened{
+        .header__menu-icon-btn{
+            .line1{transform: translate(-2px, 3px) rotate(45deg);}
+            .line2{opacity: 0;}
+            .line3{transform: translate(-3px, -2.5px) rotate(-45deg)}
+        }
+    }
+
 
     &__menu-title{
         position: relative;
@@ -106,7 +118,7 @@
 
     &__menu-bg-color{
         background: #E3D6F3;
-        border: 1px solid black;
+        border: 1px solid #433A3A;
         border-radius: 11px;
         padding: 10px 0;
         position: absolute;

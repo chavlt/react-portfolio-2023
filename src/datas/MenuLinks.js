@@ -6,9 +6,9 @@ export const MenuLinks = [
     {
         title: "Projets",
         src: '/Projects'
-    },
+    }/*,
     {
         title: "Galerie",
         src: '/Gallery'
-    } 
+    } */
 ]

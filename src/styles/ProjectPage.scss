@@ -1,28 +1,73 @@
 .project-page{
     max-width: 100%;
 
-    p, div{
-        color: black !important;
-    }
-
     &__banner-text-container{
         margin: 0 auto;
-        width: 100%;
         padding: 80px 20px;
         position: relative;
         z-index: 2;
+
+        p{
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+    }
+
+    &__banner-tags{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 10px;
+        max-width: 70vw;
+
+        .tag{
+        font-family: "Syne", sans-serif;
+        font-size: 12px;
+        line-height: 100%;
+        text-transform: uppercase;
+        font-weight: 500;
+        padding: 4px 6px;
+        background: rgba(255, 255, 255, .2);
+        border: 1px solid rgba(255, 255, 255, .5);
+        width: fit-content;
+        border-radius: 6px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+    }
+
+
+    &__banner-wrapper{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 15px;
+        right: 50%;
+        transform: translateX(50%);
+        width: 80vw;
+        
+        @media(min-width: 768px){
+            width: 90vw;
+        }
     }
 
     h1{
         font-family: 'Deglion', serif;
-        font-size: 80px;
+        font-size: 50px;
         text-align: center;
         color: white;
         font-weight: 400;
         margin : 0;
         line-height: 100%;
+        padding: 20px 0;
         
         @media(min-width: 768px){
+            font-size: 80px;
             font-size: 120px;
         }
     }
@@ -30,7 +75,7 @@
 
     h2{
         font-family: 'Syne', serif;
-        font-size: 30px;
+        font-size: 20px;
         color: white;
         margin: 0;
         line-height: 100%;
@@ -48,7 +93,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             object-fit: cover;
-            border-radius: 15px;
+            border-radius: 20px;
             width: 100%;
             height: 100%;
         
@@ -61,7 +106,8 @@
             background:
             linear-gradient(217deg, #FF6A00, transparent 70.71%),
             linear-gradient(127deg, #EE0979, transparent 70.71%),
-            linear-gradient(336deg, #FDFCFA, transparent 90.71%);            position: absolute;
+            linear-gradient(336deg, #FDFCFA, transparent 90.71%);
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
@@ -87,13 +133,182 @@
         margin: 0;
     }
 
-    &__highlight-text{
-        background: rgba(255, 106, 0, 0.1);
-        padding: 20px;
-        border-radius: 20px;
+    .container{
+        max-width: 900px;
+    }
+
+    .project-content{
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 0 0 20px;
 
         @media(min-width: 768px){
-            border-radius: 15px;
+            margin: 0 0 40px;
+        }
+
+        *{margin: 0;}
+
+        // Text styles
+        p, strong{
+            line-height: 160%;
+            font-size: 16px;
+            margin: 0;
+            width: 100%;
+        }
+
+
+        .center{
+            text-align: center;
+            width: 100%;
+        }
+
+        @media(min-width: 768px){
+            .columns--2 {
+                column-count: 2;
+                column-gap: 2rem;
+                column-fill: balance;
+            }
+        }
+
+        .highlighted-text{
+            background:#f2f2f2bd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+
+            strong{
+                font-family: 'Deglion', sans-serif;
+                font-size: 22px;
+                font-weight: 700;
+            }
+
+            p:has(strong){
+                margin-bottom: 10px;
+            }
+        }
+
+        .divider{
+            width: 100%;
+            opacity: 0;
+            height: 10px;
+
+            @media(min-width: 768px){
+                height: 60px;
+            }
+        }
+
+
+        h3, h3 strong{
+            font-family: 'Deglion', sans-serif;
+            font-size: 35px;
+            margin: 00;
+            width: 100%;
+
+            @media (min-width: 768px) {
+                font-size: 45px;
+            }
+        }
+
+        p:empty, div:empty{
+            display: none;
+            margin: 0;
+        }
+
+        a{
+            color: #EE0979;
+            text-decoration: none;
+        }
+
+        @media(min-width: 768px){
+            .small-text{
+                max-width: 33%;
+            }
+
+            img{
+                max-width: 65%;
+            }
+        }
+
+
+        // List style
+        ul:not(:has(img)){
+            margin: 0 auto 0 0;
+
+            li{
+                position: relative;
+                list-style: none;
+                margin-bottom: 10px;
+
+                &::before{
+                    content: url('../assets/ul-dot.svg');
+                    position: absolute;
+                    top: 4px;
+                    left: -20px;
+                }
+            }
+        }
+
+        ul:has(img){
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+            width: 100%;
+            
+            @media(min-width: 768px){
+                grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+            }
+
+            @media(min-width: 1440px){
+                grid-template-columns: repeat(auto-fit, minmax(415px, 1fr));
+            }
+
+            li{width: fit-content;}
+            div{width: 100%;}
+            img{max-width: 100%;}
+        }
+
+        // Content styles
+        img{
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            mix-blend-mode: multiply;
+        }
+
+        @media(min-width: 768px){
+            p + img, p:has(+ img), .highlighted-text:has(+ img), .highlighted-text + img{
+                width: 47%;
+                margin: auto;
+            }
+        }
+
+        .fullwidth{
+            width: 100%;
+
+            img{
+                width: 100%;
+                max-width: unset;
+            }
+        }
+
+    }
+
+
+    // STYLE FOR SPECIFIC PROJET
+    &[data-project-title="Flowa"]{
+        .project-page__banner{
+            img{
+                object-position: right bottom;
+            }
         }
     }
 }

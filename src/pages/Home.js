@@ -6,7 +6,9 @@ import ShortProjectsList from '../components/ShortProjectsList'
 // DATAS
 let aboutDatas = {
     "title": "Mon parcours",
-    "text": "Je suis développeuse front-end chez Lugus, une agence d'experts Shopify. Avec un parcours académique solide en MMI à l'IUT de Belfort-Montbéliard (DUT et Licence) et une spécialisation à Nancy, j'ai acquis une double compétence unique : une licence en webdesign et une licence en développement web. Cette combinaison me permet d'allier créativité graphique et expertise technique pour concevoir des interfaces utilisateur attrayantes et performantes. Passionnée par le développement front-end, je m'efforce de toujours améliorer mes compétences et de relever de nouveaux défis."
+    "text": ["Développeuse front-end spécialisée en e-commerce, je travaille aujourd’hui sur Shopify au sein de l’agence Lugus, où je conçois et développe des interfaces pour des boutiques en ligne. J’interviens aussi bien sur le développement front-end que sur la création de maquettes UI, du module spécifique à la refonte complète de sites.",
+    "En plus du développement front-end, je conçois également les interfaces que je développe, ce qui me permet de garder une vision globale du projet, du design à l’intégration. Je porte une attention particulière aux parcours utilisateurs, avec l’objectif de créer des expériences claires, fluides et orientées conversion.", 
+    "J’aime travailler sur des projets e-commerce où chaque détail compte : réduire les frictions, guider l’utilisateur naturellement et traduire l’identité d’une marque en une expérience simple, efficace et engageante."]
 }
 
   
