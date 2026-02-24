@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../styles/Footer.scss'
 import grid from '../assets/banner-grid.svg'
 import blob from '../assets/banner-blob.png'
@@ -63,8 +64,8 @@ function Footer(){
 
                     <div className="footer__item">
                         <div className="footer__legals">
-                            <a href="politique-confidentialite" className="footer__text footer__link small">Politique de confidentialité</a>
-                            <a href="mentions-legales" className="footer__text footer__link small">Mentions légales</a>
+                            <Link className="footer__text footer__link small" to="/politique-confidentialite">Politique de confidentialité</Link>
+                            <Link className="footer__text footer__link small" to="/mentions-legales">Mentions légales</Link>
                         </div>
                     </div>
                 </div>

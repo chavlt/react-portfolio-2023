@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useLocation, Link } from 'react-router-dom'
 import { MenuLinks } from '../datas/MenuLinks'
 import '../styles/Header.scss'
 import Menu from './Menu'
@@ -7,6 +8,12 @@ function Header(){
     const [isOpenMenu, setIsOpenMenu] = useState(false)
     const [textToggle, setTextToggle]  = useState(true)
 
+    const location = useLocation()
+
+    useEffect(() => {
+        setIsOpenMenu(false)
+        setTextToggle(true)
+    }, [location])
 
 
     return (
@@ -15,7 +22,9 @@ function Header(){
 
             <div className="header__menu">
                 { MenuLinks.map(({title, src}, index) => (
-                    <a key={index} className='menu__link' href={src}>{title}</a>
+                    <Link key={index} className="menu__link" to={src}>
+                    {title}
+                    </Link>
                 ))}
             </div>
 

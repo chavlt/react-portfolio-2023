@@ -6,7 +6,7 @@ import aboutImage from '../assets/about.png'
 
 function ImageWithText({title, text}){
     return (
-        <div className={"image-with-text container "}>
+        <div className={"image-with-text container container-small"}>
             <div className="image-with-text__content">
                 <Title>{title}</Title>
                 <Text>{text}</Text>

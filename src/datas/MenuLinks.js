@@ -5,7 +5,7 @@ export const MenuLinks = [
     },
     {
         title: "Projets",
-        src: '/Projects'
+        src: '/projects'
     }/*,
     {
         title: "Galerie",

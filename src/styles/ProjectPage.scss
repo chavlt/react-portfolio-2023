@@ -49,7 +49,7 @@
         bottom: 15px;
         right: 50%;
         transform: translateX(50%);
-        width: 80vw;
+        width: 85vw;
         
         @media(min-width: 768px){
             width: 90vw;
@@ -62,12 +62,12 @@
         text-align: center;
         color: white;
         font-weight: 400;
-        margin : 0;
         line-height: 100%;
         padding: 20px 0;
+        max-width: 80%;
+        margin: 0 auto;
         
         @media(min-width: 768px){
-            font-size: 80px;
             font-size: 120px;
         }
     }
@@ -85,7 +85,13 @@
 
     &__banner{
         position: relative;
-        margin: 20px;
+        margin: 10px 0 20px;
+        width: 95vw;
+
+        @media (min-width: 768px){
+            margin: 20px;
+            width: 97vw;
+        }
 
         img{
             position: absolute;

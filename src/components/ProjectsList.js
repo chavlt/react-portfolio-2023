@@ -54,7 +54,7 @@ function ProjectsList(){
                 ))}
             </div>
 
-            <div className="projects-list__items projects-list">
+            <div className="projects-list__items projects-list-wrapper">
                 {projects && projects.length > 0 &&
                     [...projects]
                         .sort((a, b) => new Date(b.date) - new Date(a.date))

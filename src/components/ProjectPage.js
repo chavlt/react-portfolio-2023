@@ -55,7 +55,7 @@ function ProjectPage({ projectId }) {
         )}
       </div>
 
-      <div className="project-page__text container">
+      <div className="project-page__text container container-small">
         {/* Affichage du contenu du projet */}
         {project.content?.html && (
           <div
